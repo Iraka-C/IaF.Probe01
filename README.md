@@ -7,8 +7,9 @@
 制作视频请移步bilibili：https://www.bilibili.com/video/BV1Mxn26eEam/
 
 本项目参考的其他开源项目：
-光隔离探头 by erftghy: https://oshwhub.com/erftghy/optical-isolation-probe
-Fiber Optic Isolated Voltage Probe by BotLawson: https://hackaday.io/project/12231-fiber-optic-isolated-voltage-probe
+
+* 光隔离探头 by erftghy: https://oshwhub.com/erftghy/optical-isolation-probe
+* Fiber Optic Isolated Voltage Probe by BotLawson: https://hackaday.io/project/12231-fiber-optic-isolated-voltage-probe
 
 > **请留意**：这是一个射频电路板，请确保有合适的仪器用于评价和调试。所需仪器见【材料与设备-仪器】
 > 
