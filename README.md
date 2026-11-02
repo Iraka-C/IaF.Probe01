@@ -1,6 +1,6 @@
 # IaF.Probe01 光隔离探头
 
-![banner](.\images\banner.png)
+![banner](./images/banner.png)
 
 本项目基于Apache License Version 2.0开源
 
@@ -35,7 +35,7 @@ Fiber Optic Isolated Voltage Probe by BotLawson: https://hackaday.io/project/122
 
 制版请使用1.6mm FR-4四层板，在JLC的叠层为JLC04161H-7628，顺序从上到下为F, In1, In2, B
 
-![PCB.png](.\images\PCB.png)
+![PCB.png](./images/PCB.png)
 
 探头主板除项目BOM所需元件以及PCB制版外，还需要下列材料：
 
@@ -83,7 +83,7 @@ Fiber Optic Isolated Voltage Probe by BotLawson: https://hackaday.io/project/122
 
 需要一块测试板来观察激光管和光电管的耦合以及测量光耦成品的参数以决定后期电路调试的方向。测试板电路如下：
 
-<img src=".\images\OPT-Test-Schematic.png" width="50%">
+<img src="./images/OPT-Test-Schematic.png" width="50%">
 
 其中1k电位器用于调整激光管静态电流，CH1和CH2可以连接到示波器两个1MΩ输入的通道或两个电压表用于观测激光管LD和光电管PD的电流。激光管每通过1mA电流CH1输出0.1V，光电管每通过1mA电流CH2输出1V。1k电位器建议使用多圈电位器，可更精确调整激光管电流。
 
@@ -97,7 +97,7 @@ Vin平时保持开路不接任何输入。如接入信号可在评价光耦特�
 
 | 正面 | 背面 |
 | ---- | ---- |
-| ![OPT-Test-Front](.\images\OPT-Test-Front.jpg) | ![OPT-Test-Back](.\images\OPT-Test-Back.jpg) |
+| ![OPT-Test-Front](./images/OPT-Test-Front.jpg) | ![OPT-Test-Back](./images/OPT-Test-Back.jpg) |
 
 使用方法：
 
