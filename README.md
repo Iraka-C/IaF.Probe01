@@ -11,8 +11,11 @@
 Fiber Optic Isolated Voltage Probe by BotLawson: https://hackaday.io/project/12231-fiber-optic-isolated-voltage-probe
 
 > **请留意**：这是一个射频电路板，请确保有合适的仪器用于评价和调试。所需仪器见【材料与设备-仪器】
+> 
 > **请留意**：我在制作这个探头过程中没有使用光纤，因此CMRR有限。但使用光纤的电路原理完全相同，可自行改装。
+> 
 > **请留意**：电路经单端化后可以用输入动态范围换取更高共模抑制比，详见【调试-单端化】
+> 
 > **请留意**：附件中包含Gerber文件和相应的KiCAD工程源文件。
 
 ## 特性简介
@@ -126,7 +129,7 @@ Vin平时保持开路不接任何输入。如接入信号可在评价光耦特�
 1. 将光电管连笔芯插入测试板PD座
 2. 用测试钩子线连接LD座和激光管
 3. 将激光管吸管塞入光电管笔芯，注意激光管和光电管引脚方向以方便后续焊接
-   <img src=".\images\LD-PD-Orientation.jpg" width="30%" />
+   <img src="./images/LD-PD-Orientation.jpg" width="30%" />
 4. 通电，调整1k电位器使CH1输出1.50V（LD电流15mA）
 5. 上下调整激光管的距离并左右摇晃以使CH2输出电压（光电管上的电流）最大
   
@@ -147,7 +150,7 @@ Vin平时保持开路不接任何输入。如接入信号可在评价光耦特�
 
 | 套好管子之后<br>上：TO-56-4激光管<br>下：TO-46-3光电管       | 组合在一起                                                   | 环氧固封后                                                   |
 | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| ![OPT-Assembly01](.\images\OPT-Assembly01.jpg) | ![OPT-Assembly02](.\images\OPT-Assembly02.jpg) | ![OPT-Assembly03](.\images\OPT-Assembly03.jpg) |
+| ![OPT-Assembly01](./images/OPT-Assembly01.jpg) | ![OPT-Assembly02](./images/OPT-Assembly02.jpg) | ![OPT-Assembly03](./images/OPT-Assembly03.jpg) |
 
 ### 测试
 
@@ -159,7 +162,7 @@ Vin平时保持开路不接任何输入。如接入信号可在评价光耦特�
 6. 根据截图计算制成光耦的阈值电流和斜率效率
 
 > 测试实例：这是其中一个光耦的XY曲线：
-> <img src=".\images\OPT-Test-Example-LPDA004.png">
+> <img src="./images/OPT-Test-Example-LPDA004.png">
 > 可以算出LD阈值电流约为7.5mA，LD到PD的斜率效率约为0.228，即LD电流每变化1mA则PD电流相应变化0.228mA。
 
 ## 安装与调试
@@ -175,7 +178,7 @@ Vin平时保持开路不接任何输入。如接入信号可在评价光耦特�
 5. 测量Type-C插座正负有无短路，隔离侧电源输出有无短路。有则排查
 6. 焊接所有插件电解电容
 7. （可选）在U3的1和2脚以及15和16脚之间各直接焊一100nF 0603或0402电容，与封装越近越好：
-   <img src=".\images\PCB-Assembly05.jpg" width="30%">
+   <img src="./images/PCB-Assembly05.jpg" width="30%">
 8. Type-C插座通电，观察测量±6V、±2.5V、隔离测5V电压是否正常，D7是否正常发光。
 
 【信号部分】
@@ -185,7 +188,7 @@ Vin平时保持开路不接任何输入。如接入信号可在评价光耦特�
    * 焊盘上有两面打通的过孔，因此焊一面时焊锡会漏到另一面。这是正常现象，多漏一点也无所谓
    * MMCX座可以先焊正面再焊背面，这样锡往正面漏得更多
    * MMCX背面的焊盘边缘也可以和座子本身用锡连在一起增加强度
-     <img src=".\images\PCB-Assembly03.jpg" width="30%">
+     <img src="./images/PCB-Assembly03.jpg" width="30%">
    
 2. 焊接光耦D2-PD1和D5-PD2
    * 激光管LD+/LD-以外的引脚**全部剪掉**！其它引脚剪至合适长度。
@@ -194,7 +197,7 @@ Vin平时保持开路不接任何输入。如接入信号可在评价光耦特�
      > 如果想实现更好的CMRR和THD表现，可以在焊接PD+之前先进行接收端电阻匹配。详见【调试-接收端电阻匹配】
    * 焊接光耦时动作迅速，每个焊点不要加热超过3秒钟，以免损伤光电器件或导致光耦形变。
    * PD+引脚自己掰到焊盘上方去：
-     <img src=".\images\PCB-Assembly04.jpg" width="30%">
+     <img src="./images/PCB-Assembly04.jpg" width="30%">
 
 
 
@@ -206,7 +209,7 @@ Vin平时保持开路不接任何输入。如接入信号可在评价光耦特�
 
 上述安装确认无误后首先调整激光管电流。目标是让最终输出达到开路摆幅±5V。
 
-<img src=".\images\PCB-Adjust01.jpg" width="50%">
+<img src="./images/PCB-Adjust01.jpg" width="50%">
 
 假设输出5V，光电管所需电流摆幅可按上图计算：
 
@@ -214,7 +217,7 @@ $$I=\frac{5V}{(1+\frac{510\Omega}{180\Omega})(1+\frac{300\Omega}{50\Omega})\time
 
 **以之前制作的光耦为例**，观察光耦特性曲线可知输出0.5mA以下非线性较强，故增加一点电流到2.2+0.5=2.7mA作为光电管静态工作点：
 
-<img src=".\images\OPT-Test-Example-LPDA004-curve.png">
+<img src="./images/OPT-Test-Example-LPDA004-curve.png">
 
 此时对应的激光管电流为19.3mA，可直接取20mA。两个激光管共需电流40mA。
 
@@ -246,7 +249,7 @@ $$I=\frac{5V}{(1+\frac{510\Omega}{180\Omega})(1+\frac{300\Omega}{50\Omega})\time
 
 多半不好看，会呈现如下形态：
 
-![PCB-Test-S21-01.png](.\images\PCB-Test-S21-01.png)
+![PCB-Test-S21-01.png](./images/PCB-Test-S21-01.png)
 
 S21曲线一开始会有上升/下降（初始斜率），这是输入MOS管电容导致的一阶衰减。然后会有两个峰。峰A位于500-600MHz，是由OPA695反馈回路控制的，峰B位于900MHz，是由OPA855反馈回路控制的。
 
@@ -299,7 +302,7 @@ S21曲线一开始会有上升/下降（初始斜率），这是输入MOS管电�
 
 | 制作示意                                                     | 效果                                                         |
 | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| ![Cable01](.\images\Cable01.jpg) | ![Cable01](.\images\Cable02.jpg) |
+| ![Cable01](./images/Cable01.jpg) | ![Cable01](./images/Cable02.jpg) |
 
 检查：用万用表测量SMA中心和外壳螺母之间电阻是否为50Ω!
 
@@ -324,7 +327,7 @@ S21曲线一开始会有上升/下降（初始斜率），这是输入MOS管电�
 
 | 正面                                                         | 背面                                                         |
 | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| ![PCB-Assembly01](.\images\PCB-Assembly01.jpg) | ![PCB-Assembly02](.\images\PCB-Assembly02.jpg) |
+| ![PCB-Assembly01](./images/PCB-Assembly01.jpg) | ![PCB-Assembly02](./images/PCB-Assembly02.jpg) |
 
 3. 将USB Type-A母座外壳拆下，取出内部塑料插芯后装回金属后盖，保留外壳做屏蔽罩用
   
@@ -333,7 +336,7 @@ S21曲线一开始会有上升/下降（初始斜率），这是输入MOS管电�
    * 屏蔽罩J1前方用铝箔胶带封好，下方留出1mm缝隙防止接触到引脚短路
      | 用水口钳剪掉这根金属条                                       | 包上铝箔胶带，下方留出1mm空隙                                |
      | ------------------------------------------------------------ | ------------------------------------------------------------ |
-     | ![Shield01](.\images\Shield01.jpg) | ![Shield02](\images\Shield02.jpg) |
+     | ![Shield01](./images/Shield01.jpg) | ![Shield02](\images\Shield02.jpg) |
    * 焊接J1和J10（焊上就很难取下来了，所以先完成所有调试！）
    
 4. 在PCB背面光电管PD-和GND上方粘一层绝缘用耐高温胶带，然后在上方再粘一层铝箔胶带用作屏蔽。小心铝箔胶带不要接触元件引脚导致短路
@@ -342,7 +345,7 @@ S21曲线一开始会有上升/下降（初始斜率），这是输入MOS管电�
 
 | 正面                                                         | 背面                                                         |
 | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| ![PCB-Assembly01](.\images\PCB-Assembly06.jpg) | ![PCB-Assembly01](.\images\PCB-Assembly07.jpg) |
+| ![PCB-Assembly01](./images/PCB-Assembly06.jpg) | ![PCB-Assembly01](./images/PCB-Assembly07.jpg) |
 
 ### 一些可以改进方法
 
@@ -353,7 +356,7 @@ S21曲线一开始会有上升/下降（初始斜率），这是输入MOS管电�
 接收端电阻匹配通过调整两个光路最终的增益来实现对称的信号传输（相同斜率效率）。这个步骤最好和焊接光耦同时完成。如果安装完成后想实现接收端电阻匹配就需要卸下一些电阻再飞线出来做。下面是同时完成的步骤。
 
 在焊接好光耦的发射端LD+/LD-和接收端的PD-/GND引脚（PD+悬空不焊接！）后，先完成发射端所有元件的安装和激光管静态电流调试，然后将两个光电管的PD+和接收侧GND共三根线（可用测试钩子）引出到面包板上，按下图接好。Ra1是一个2~10kΩ的多圈电位器。
-<img src=".\images\R-matching.jpg" width="50%">
+<img src="./images/R-matching.jpg" width="50%">
 
 将示波器CH1和CH2连到Ra1和Ra2上端，使用1MΩ交流耦合。为探头供电并预热10分钟，用信号发生器在在探头输入端加上1Vpp正弦波，此时CH1和CH2将会出现方向相反的波形。打开CH1和CH2交流有效值测量，调整Ra1直到两通道交流有效值相同（或者打开CH1反向并调整Ra1到两通道波形重合）。此时取下Ra1和Ra2并用万用表测量阻值（Ra2也要测！标称1k总还是有误差），然后通过：
 
@@ -379,11 +382,11 @@ $$R4=\frac{Ra2}{Ra1}\times 42.86\Omega$$
 #### 激光管内置监测PD共模反馈（已实验，未实现）
 
 许多激光管内置一个光电管用于监测光强度，用于在温度变化的时候调整激光管电流防止烧毁或功率不足。典型的激光管出光功率与温度特性如下所示：
-![LD-characteristic.png](.\images\LD-characteristic.png)
+![LD-characteristic.png](./images/LD-characteristic.png)
 温度升高后，如果保持静态电流不变，则由于阈值电压升高，可用的电流摆幅会减小。
 
 共模反馈（CMFB）用于控制出光功率稳定来抵消温度造成的阈值电流变化。一个我试验过可用的方案如下：
-<img src=".\images\LD-CMFB.png" width="30%">
+<img src="./images/LD-CMFB.png" width="30%">
 其中两个光电管均为激光管的内置PD。静态电流由Iset控制。此时Iset应设置为内置PD对应的电流，Iset可简单地用电阻实现。可以用之前制作的光耦测试板测试激光管自身的LD-PD特性曲线来决定Iset大小。
 
 最后没有在开源出来的板子上实现的原因有两个：
@@ -411,9 +414,9 @@ $$R4=\frac{Ra2}{Ra1}\times 42.86\Omega$$
 
 ### 图表
 
-| S参数<br>![Sparam](.\images\Sparam.png) | 阶跃响应<br>![Trise](.\images\Trise.png) |
+| S参数<br>![Sparam](./images/Sparam.png) | 阶跃响应<br>![Trise](./images/Trise.png) |
 | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| 输入信号强度 vs. 功率带宽<br>![PWR-BW](.\images\PWR-BW.png) | 共模抑制比<br>![CMRR](.\images\CMRR.png) |
+| 输入信号强度 vs. 功率带宽<br>![PWR-BW](./images/PWR-BW.png) | 共模抑制比<br>![CMRR](./images/CMRR.png) |
 
 > 共模抑制的测量需要将输入短路并直接接在端接50Ω的信号源输出上，越短越好。用示波器平均功能测量输出信号强度。测量时探头要架在空中防止和桌面的耦合。
 > 我的仪器测量精度有限，但仍可以看出相比使用光纤的探头这个探头的CMRR比较弱。如果愿意在光耦驱动之前加上放大就可以使用光纤线传输信号。拉得越远效果越好。
