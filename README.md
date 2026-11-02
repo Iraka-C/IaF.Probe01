@@ -2,6 +2,8 @@
 
 ![banner](.\images\banner.png)
 
+本项目基于Apache License Version 2.0开源
+
 制作视频请移步bilibili：https://www.bilibili.com/video/BV1Mxn26eEam/
 
 本项目参考的其他开源项目：
